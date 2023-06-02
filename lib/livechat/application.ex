@@ -17,9 +17,10 @@ defmodule Livechat.Application do
       # Start Finch
       {Finch, name: Livechat.Finch},
       # Start the Endpoint (http/https)
-      LivechatWeb.Endpoint
+      LivechatWeb.Endpoint,
       # Start a worker by calling: Livechat.Worker.start_link(arg)
       # {Livechat.Worker, arg}
+      {Nx.Serving, serving: LiveChat.Model.serving(), name: LiveChat.Serving, batch_timeout: 100}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

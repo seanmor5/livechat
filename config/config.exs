@@ -20,6 +20,7 @@ config :livechat, LivechatWeb.Endpoint,
   pubsub_server: Livechat.PubSub,
   live_view: [signing_salt: "bobXVfrv"]
 
+config :nx, default_backend: EXLA.Backend
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
